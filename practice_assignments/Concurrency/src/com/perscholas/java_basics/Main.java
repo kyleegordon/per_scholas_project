@@ -22,7 +22,25 @@ public class Main {
 //        t4.start();
 //        t5.start();
 
-        //2.a
+        //2.a, b
+
+//        Runnable shared = new ThreadTwo();
+//        Thread t1 = new Thread(shared);
+//        Thread t2 = new Thread(shared);
+//        t1.start();
+//        t2.start();
+
+
+        //3.a, b
+        ThreadTwo shared = new ThreadTwo();
+        Thread t1 = new Thread(shared);
+        Thread t2 = new Thread(new ThreadDisplay(shared));
+
+        t1.start();
+        t2.start();
+
+
+
 
 
     }
