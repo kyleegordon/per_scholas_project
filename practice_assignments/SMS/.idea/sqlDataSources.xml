@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="cf1ded09-86ae-4532-b7b9-c76a3311e796" name="SMS@localhost Mapping">
+      <data-sources db="6484f0b1-f6db-4181-a000-942e1f0190d2" ddl="d5c53c67-63a2-4073-8c9d-9f9ff2b5a004" />
+      <scope>
+        <node kind="schema" qname="sms" />
+      </scope>
+    </mapping>
+  </component>
+</project>
