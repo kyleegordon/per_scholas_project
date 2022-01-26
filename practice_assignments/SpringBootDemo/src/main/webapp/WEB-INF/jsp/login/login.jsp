@@ -3,7 +3,7 @@
 <body>
 
 <table>
-    <form method="GET" action="/login">
+    <form method="GET" action="/loginSubmit">
         <tr>
             <td>
                 <label for="username">Username: </label>
