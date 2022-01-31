@@ -1,7 +1,7 @@
-<html>
-<body>
+<jsp:include page="../include/header.jsp" />
+
 <h1>Login Successful</h1>
 <p>Username: ${username}</p>
 <p>Password: ${password}</p>
-</body>
-</html>
+<a href="/logout">Logout</a>
+<jsp:include page="../include/footer.jsp" />

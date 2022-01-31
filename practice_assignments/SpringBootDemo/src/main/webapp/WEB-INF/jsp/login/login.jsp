@@ -1,7 +1,9 @@
-<html>
+<%--this connects to header.jsp to dynamically load the header content--%>
+<jsp:include page="../include/header.jsp" />
 
-<body>
 
+
+<h1>${loginFailed}</h1>
 <table>
     <form method="GET" action="/loginSubmit">
         <tr>
@@ -26,8 +28,6 @@
             </td>
         </tr>
     </form>
-    <p>Username: ${username}</p>
-    <p>Password: ${password}</p>
 </table>
-</body>
-</html>
+
+<jsp:include page="../include/footer.jsp" />
