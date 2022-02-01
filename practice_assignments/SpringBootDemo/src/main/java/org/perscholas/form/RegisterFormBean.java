@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.Length;
+import org.perscholas.database.entity.User;
 import org.perscholas.validation.EmailUnique;
 import org.perscholas.validation.TwoFieldsAreEqual;
 
@@ -16,6 +17,9 @@ import java.util.List;
 @Setter
 @TwoFieldsAreEqual(fieldOneName = "confirmPassword", fieldTwoName = "password", message = "Password and Conform Password must be the same.")
 public class RegisterFormBean {
+
+    @NotEmpty
+    private String username;
 
     //@NotEmpty requires the value to be not null and also not empty ("")
     @NotEmpty(message = "Email is required")
@@ -40,6 +44,8 @@ public class RegisterFormBean {
     private String confirmPassword;
 
     private List<String> errorMessages = new ArrayList<>();
+
+    private List<User> userList = new ArrayList<>();
 
     @Override
     public String toString() {
