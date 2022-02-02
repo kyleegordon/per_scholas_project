@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface UserDAO extends JpaRepository<User, Long> {
 
+    //these just magically work without having to write the code for each method
     public User findById(@Param("id") Integer id);
 
     public User findByEmail(@Param("email") String email);
