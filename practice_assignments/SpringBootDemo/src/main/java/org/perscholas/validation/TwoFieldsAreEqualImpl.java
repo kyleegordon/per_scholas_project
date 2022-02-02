@@ -1,10 +1,8 @@
 package org.perscholas.validation;
 
+import org.apache.commons.beanutils.BeanUtils;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-
-import org.apache.commons.beanutils.BeanUtils;
-
 
 public class TwoFieldsAreEqualImpl implements ConstraintValidator<TwoFieldsAreEqual, Object> {
 

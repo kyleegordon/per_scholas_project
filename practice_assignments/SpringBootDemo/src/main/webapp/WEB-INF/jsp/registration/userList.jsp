@@ -9,10 +9,25 @@
 
     }
 </style>
+
 <form action="/registration-url-path/userList">
-    <input type="text" name="search">
-    <button type="submit">Search</button>
+    <input type="text" name="search" value="${searchFormValue}">
+    <button type="submit">Search By First Name</button>
 </form>
+<hr>
+
+<form action="/registration-url-path/userList">
+    First Name: <input type="text" name="firstName" value="${firstNameForm1}">
+    Last Name: <input type="text" name="lastName" value="${lastNameForm1}">
+    <button type="submit">Search By First Or Last Name</button>
+</form>
+
+<form action="/registration-url-path/userListResult">
+    First Name: <input type="text" name="firstName" value="${firstNameForm2}">
+    Last Name: <input type="text" name="lastName" value="${lastNameForm2}">
+    <button type="submit">Search By First And Last Name</button>
+</form>
+
 <table id="searchResults" style="border-collapse: collapse;">
     <tr>
         <td>ID</td>

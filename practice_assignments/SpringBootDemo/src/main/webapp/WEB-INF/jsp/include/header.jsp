@@ -11,6 +11,7 @@
         <td><a href="/logout">Logout</a></td>
         <td><a href="/registration-url-path/register">User Registration</a></td>
         <td><a href="/index">Home</a></td>
+        <td><a href="/registration-url-path/userList">User Search</a></td>
     </tr>
 </table>
 <hr>

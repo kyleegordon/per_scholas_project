@@ -66,7 +66,9 @@ public class RegistrationController {
     }
 
     @RequestMapping(value =  "/userList", method = RequestMethod.GET)
-    public ModelAndView userList(@RequestParam(required = false) String search) throws Exception {
+    public ModelAndView userList(@RequestParam(required = false) String search,
+                                 @RequestParam(required = false) String firstName,
+                                 @RequestParam(required = false) String lastName) throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("registration/userList");
 
@@ -75,8 +77,33 @@ public class RegistrationController {
         if (!StringUtils.isEmpty(search)) {
             List<User> users = userDao.findByFirstName(search);
             response.addObject("userListKey", users);
+            response.addObject("searchFormValue", search);
         }
 
+        if (!StringUtils.isEmpty(firstName) || !StringUtils.isEmpty(lastName)) {
+            List<User> users = userDao.findByFirstNameIgnoreCaseOrLastNameIgnoreCase(firstName, lastName);
+            response.addObject("userListKey", users);
+            response.addObject("firstNameForm1", firstName);
+            response.addObject("lastNameForm1", lastName);
+        }
+
+
+        return response;
+    }
+
+    @RequestMapping(value =  "/userListResult", method = RequestMethod.GET)
+    public ModelAndView userListResult(@RequestParam(required = false) String firstName,
+                                       @RequestParam(required = false) String lastName) throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("registration/userList");
+
+        //search by first and last name case insensitive
+        if (!StringUtils.isEmpty(firstName) && !StringUtils.isEmpty(lastName)) {
+            List<User> users = userDao.findByFirstNameIgnoreCaseAndLastNameIgnoreCase(firstName, lastName);
+            response.addObject("userListKey", users);
+            response.addObject("firstNameForm2", firstName);
+            response.addObject("lastNameForm2", lastName);
+        }
 
 
         return response;
