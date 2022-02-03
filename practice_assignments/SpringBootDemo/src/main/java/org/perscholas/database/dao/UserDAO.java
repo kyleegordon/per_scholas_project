@@ -12,6 +12,8 @@ public interface UserDAO extends JpaRepository<User, Long> {
     //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
     //^^documentation with query method keywords ^^
     //these just magically work without having to write the code for each method
+
+//    @Query("select u from User u where u.id = :id")
     public User findById(@Param("id") Integer id);
 
     public User findByEmail(@Param("email") String email);

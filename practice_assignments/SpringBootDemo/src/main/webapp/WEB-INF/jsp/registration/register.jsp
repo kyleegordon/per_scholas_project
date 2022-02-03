@@ -5,6 +5,8 @@
 <form method="GET"  action="/registration-url-path/registerSubmit" >
 
     <table>
+<%--        below input is invisible, but stores a value that can be accessed by the backend to distinguish an update from a create--%>
+        <input type="hidden" name="id" value="${formBeanKey.id}">
         <tr>
             <td>Username:</td>
             <td><input type="text" name="username" value="${formBeanKey.username}"></td>
@@ -20,10 +22,6 @@
         <tr>
             <td>Last Name:</td>
             <td><input type="text" name="lastName" value="${formBeanKey.lastName}"></td>
-        </tr>
-        <tr>
-            <td>Age:</td>
-            <td><input type="text" name="age" value="${formBeanKey.age}"></td>
         </tr>
         <tr>
             <td>Password:</td>

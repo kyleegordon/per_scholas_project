@@ -18,13 +18,15 @@ import java.util.List;
 @TwoFieldsAreEqual(fieldOneName = "confirmPassword", fieldTwoName = "password", message = "Password and Conform Password must be the same.")
 public class RegisterFormBean {
 
+    private Integer id;
+
     @NotEmpty
     private String username;
 
     //@NotEmpty requires the value to be not null and also not empty ("")
     @NotEmpty(message = "Email is required")
     @Pattern(regexp = "^.+@.+$", message = "Email must match pattern")
-    @EmailUnique(message = "Email must be unique")
+//    @EmailUnique(message = "Email must be unique")
     private String email;
 
     @Length(min=1, max=25,
@@ -36,10 +38,10 @@ public class RegisterFormBean {
             message="Last Name must be between 1 and 5 characters in length")
     private String lastName;
 
-    @NotNull(message = "Age is required")
-    @Min(value = 18)
-    @Max(value = 100)
-    private Integer age;
+//    @NotNull(message = "Age is required")
+//    @Min(value = 18)
+//    @Max(value = 100)
+//    private Integer age;
     private String password;
     private String confirmPassword;
 
