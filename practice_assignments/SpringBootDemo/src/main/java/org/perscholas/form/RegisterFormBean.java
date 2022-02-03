@@ -18,6 +18,7 @@ import java.util.List;
 @TwoFieldsAreEqual(fieldOneName = "confirmPassword", fieldTwoName = "password", message = "Password and Conform Password must be the same.")
 public class RegisterFormBean {
 
+    //this is a hidden value that is only needed to distinguish between a create and an update
     private Integer id;
 
     @NotEmpty

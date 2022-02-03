@@ -56,7 +56,7 @@ public class RegistrationController {
             response.addObject("formBeanKey", form);
 
         } else {
-            //this is an id has not been passed, will create new
+            //an id has not been passed, will create new
             RegisterFormBean form = new RegisterFormBean();
             response.addObject("formBeanKey", form);
         }
@@ -147,6 +147,18 @@ public class RegistrationController {
         }
 
 
+        return response;
+    }
+
+
+    //this deletes user from database
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+    public ModelAndView delete(@RequestParam(required = true) Integer id) throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("/registration/userList");
+
+        User delete = userDao.findById(id);
+        userDao.delete(delete);
         return response;
     }
 }
