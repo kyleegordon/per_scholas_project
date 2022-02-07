@@ -152,6 +152,7 @@ public class RegistrationController {
 
 
     //this deletes user from database
+    //can add javascript on jsp page to display an alert that asks user if they are sure they want to delete and/or confirm it has been deleted
     @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
     public ModelAndView delete(@RequestParam(required = true) Integer id) throws Exception {
         ModelAndView response = new ModelAndView();
