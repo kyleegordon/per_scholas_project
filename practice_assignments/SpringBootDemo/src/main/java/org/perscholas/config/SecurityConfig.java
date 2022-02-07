@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     //this need to be implemented in the controller
                     .loginPage("/login/login")
                     //URL below is where the login page submits to be processed by Spring Security
-                    .loginProcessingUrl("/login/login")
+                    .loginProcessingUrl("/login/loginSecurityPost")
                     .and()
                 .logout()
                     //removes cookie from the browser and removes user session from tomcat and spring security
@@ -65,14 +65,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public DaoAuthenticationProvider getAuthenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService((UserDetailsService) userDetailsService);
+        authProvider.setUserDetailsService(userDetailsService);
         authProvider.setPasswordEncoder(getPasswordEncoder());
         return authProvider;
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService((UserDetailsService) userDetailsService);
+        auth.userDetailsService(userDetailsService);
         auth.authenticationProvider(getAuthenticationProvider());
     }
 

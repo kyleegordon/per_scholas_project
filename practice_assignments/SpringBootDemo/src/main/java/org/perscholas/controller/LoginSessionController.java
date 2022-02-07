@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
+//This was the old way to do it without security
+
 @Controller
 @RequestMapping("/session")
 public class LoginSessionController {

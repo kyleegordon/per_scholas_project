@@ -15,9 +15,9 @@ import java.util.Collection;
 import java.util.List;
 
 @Component
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService, org.springframework.security.core.userdetails.UserDetailsService {
 
-    
+
 
     @Autowired
     private UserDAO userDao;

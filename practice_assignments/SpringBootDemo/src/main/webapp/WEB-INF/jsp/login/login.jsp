@@ -5,7 +5,8 @@
 
 <h1>${loginFailed}</h1>
 <table>
-    <form method="GET" action="/loginSubmit">
+<%--    action url references spring security--%>
+    <form method="POST" action="/login/loginSecurityPost">
         <tr>
             <td>
                 <label for="username">Username: </label>
