@@ -40,6 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     //this need to be implemented in the controller
                     .loginPage("/login/login")
                     //URL below is where the login page submits to be processed by Spring Security
+                    //this should match the action url on login jsp form
                     .loginProcessingUrl("/login/loginSecurityPost")
                     .and()
                 .logout()

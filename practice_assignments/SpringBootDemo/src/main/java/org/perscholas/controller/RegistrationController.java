@@ -5,6 +5,7 @@ import org.perscholas.database.dao.UserDAO;
 import org.perscholas.database.entity.User;
 import org.perscholas.form.RegisterFormBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -23,6 +24,10 @@ public class RegistrationController {
 
     @Autowired
     private UserDAO userDao;
+
+    //this refers to the PasswordEncoder method in SecurityConfig
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
 //    @RequestMapping(value =  "/register", method = RequestMethod.GET)
@@ -98,7 +103,11 @@ public class RegistrationController {
             user.setEmail(form.getEmail());
             user.setFirstName(form.getFirstName());
             user.setLastName(form.getLastName());
-            user.setPassword(form.getPassword());
+
+            //this encrypts the password before sending it to the database
+            String encryptedPassword = passwordEncoder.encode(form.getPassword());
+            user.setPassword(encryptedPassword);
+
             userDao.save(user);
             response.setViewName("registration/userList");
         }
