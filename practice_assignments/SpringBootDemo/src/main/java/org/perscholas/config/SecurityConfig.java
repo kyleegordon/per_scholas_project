@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     //this is implemented by spring security and does not need a controller
                     .logoutUrl("/login/logout")
                     //this is where user will be redirected on sucessful logout
-                    .logoutSuccessUrl("/index")
+                    .logoutSuccessUrl("/login/logoutSuccess")
                     .and()
                 .rememberMe()
                     //this configuration is not required for the class or the case study, but is nice to have

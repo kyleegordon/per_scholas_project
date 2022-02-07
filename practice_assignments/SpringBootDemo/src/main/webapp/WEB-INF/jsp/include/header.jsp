@@ -8,10 +8,13 @@
 <body>
 <table>
     <tr>
-        <td><a href="/logout">Logout</a></td>
+        <td><a href="/login/login">Login</a></td>
+<%--        logout url is from spring security--%>
+        <td><a href="/login/logout">Logout</a></td>
         <td><a href="/registration-url-path/register">User Registration</a></td>
         <td><a href="/index">Home</a></td>
         <td><a href="/registration-url-path/userList">User Search</a></td>
+        <td><a href="/admin/home">Admin Home</a></td>
     </tr>
 </table>
 <hr>

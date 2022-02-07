@@ -12,12 +12,12 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     //tells tomcat server to listen on "/" and "/index", then creates model view and sets name to index
-    @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/index", "/home" }, method = RequestMethod.GET)
     public ModelAndView index() throws Exception {
         ModelAndView response = new ModelAndView();
 
         //refers to the name of the jsp file
-        response.setViewName("index");
+        response.setViewName("home");
 
         return response;
     }

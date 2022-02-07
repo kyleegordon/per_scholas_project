@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 @PreAuthorize("hasAuthority('ADMIN')")
 public class AdminController {
 
+    //spring redirects to url "/login/login if you attempt to access these pages while not logged in with admin access
+
     public static final Logger LOG = LoggerFactory.getLogger(AdminController.class);
 
     @RequestMapping(value = {  "/home" }, method = RequestMethod.GET)

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -23,4 +24,15 @@ public class LoginController {
         return response;
     }
 
+    @RequestMapping(value = {  "/logoutSuccess" }, method = RequestMethod.GET)
+    public ModelAndView logoutSuccess() throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("login/logoutSuccess");
+        return response;
+    }
+
+
+
 }
+
+
