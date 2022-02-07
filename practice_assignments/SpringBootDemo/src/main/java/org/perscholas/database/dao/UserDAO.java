@@ -1,6 +1,7 @@
 package org.perscholas.database.dao;
 
 import org.perscholas.database.entity.User;
+import org.perscholas.database.entity.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -26,6 +27,6 @@ public interface UserDAO extends JpaRepository<User, Long> {
 //    @Query("select u from User u")
 //    public List<User> findAll();
 
-//    @Query("select ur from UserRole ur where ur.user.id = :userId")
-//    List<UserRole> getUserRoles(Integer userId);
+    @Query("select ur from UserRole ur where ur.user.id = :userId")
+    List<UserRole> getUserRoles(Integer userId);
 }
