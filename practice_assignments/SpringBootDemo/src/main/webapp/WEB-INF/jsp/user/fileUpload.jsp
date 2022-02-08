@@ -3,7 +3,7 @@
 
 <h1> File Upload Example</h1>
 
-<form method="POST" action="" enctype="multipart/form-data">
+<form method="POST" action="/user/fileUploadSubmit" enctype="multipart/form-data">
 
     <table>
         <tr>
