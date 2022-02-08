@@ -37,4 +37,16 @@ public class UserController {
 
         return response;
     }
+
+//    commons file upload methods
+
+    @RequestMapping(value = {  "/user/fileUpload" }, method = RequestMethod.GET)
+    public ModelAndView upload() throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("user/fileUpload");
+
+
+        return response;
+    }
+
 }

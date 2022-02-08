@@ -29,6 +29,10 @@
         <sec:authorize access="hasAuthority('ADMIN')">
             <td><a href="/admin/home">Admin Home</a></td>
         </sec:authorize>
+
+    <sec:authorize access="hasAnyAuthority('ADMIN', 'USER')">
+        <td><a href="/user/fileUpload">Upload File</a></td>
+    </sec:authorize>
     </tr>
 </table>
 <hr>
