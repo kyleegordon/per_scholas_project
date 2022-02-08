@@ -1,5 +1,6 @@
 package org.perscholas.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.perscholas.database.dao.UserDAO;
 import org.perscholas.database.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+//automatically sets up logging
+@Slf4j
 @Controller
 @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
 public class UserController {
