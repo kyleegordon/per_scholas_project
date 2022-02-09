@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
-@Controller
-@ResponseBody
+@org.springframework.web.bind.annotation.RestController
+//@Controller - this is included in @RestController
+//@ResponseBody - this is included in @RestController
 @RequestMapping("/rest")
 public class RestController {
 
@@ -18,6 +19,7 @@ public class RestController {
     private UserDAO userDAO;
 
     //in a rest controller, a get method is always used for reads
+    //REST controllers always return JSON
 
     //https://www.baeldung.com/spring-pathvariable
     //this url for this method changes based on the variable id
