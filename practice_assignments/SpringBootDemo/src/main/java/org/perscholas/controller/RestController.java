@@ -2,7 +2,9 @@ package org.perscholas.controller;
 
 import org.json.JSONObject;
 import org.perscholas.database.dao.UserDAO;
+import org.perscholas.database.dao.UserRoleDAO;
 import org.perscholas.database.entity.User;
+import org.perscholas.database.entity.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +24,9 @@ public class RestController {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private UserRoleDAO userRoleDAO;
 
     //in a rest controller, a get method is always used for reads
     //REST controllers always return JSON
@@ -46,6 +51,13 @@ public class RestController {
         User user = userDAO.findById(id);
 
         if (id != null && user != null) {
+
+            //delete related data from UserRole table before deleting user
+            List<UserRole> roles = userDAO.getUserRoles(id);
+            for(UserRole role : roles){
+                userRoleDAO.delete(role);
+            }
+
             userDAO.delete(user);
             return new ResponseEntity<Long>(id.longValue(), HttpStatus.OK);
         } else {
