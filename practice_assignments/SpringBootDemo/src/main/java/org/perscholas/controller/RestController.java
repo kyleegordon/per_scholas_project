@@ -73,7 +73,7 @@ public class RestController {
 //        return jo.toString();
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public User add(@Valid RegisterFormBean form, BindingResult errors) {
         User user = new User();
 
