@@ -5,14 +5,17 @@ import org.perscholas.database.dao.UserDAO;
 import org.perscholas.database.dao.UserRoleDAO;
 import org.perscholas.database.entity.User;
 import org.perscholas.database.entity.UserRole;
+import org.perscholas.form.RegisterFormBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.validation.Valid;
 import java.awt.*;
 import java.util.List;
 
@@ -45,7 +48,7 @@ public class RestController {
         return users;
     }
 
-    //this method deleted user found by id and returns success confirmation as JSON
+    //this method deletes user found by id and returns success confirmation as JSON
     @RequestMapping(value="/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Long> delete(@PathVariable Integer id) {
         User user = userDAO.findById(id);
@@ -64,13 +67,22 @@ public class RestController {
             return new ResponseEntity<Long>(HttpStatus.NOT_FOUND);
         }
 
-
-
-
-
 //        JSONObject jo = new JSONObject();
 //        jo.put("status", "success");
 //
 //        return jo.toString();
+    }
+
+    @RequestMapping(value="/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public User add(@Valid RegisterFormBean form, BindingResult errors) {
+        User user = new User();
+
+        user.setEmail(form.getEmail());
+        user.setPassword(form.getPassword());
+        user.setFirstName(user.getFirstName());
+        user.setLastName(user.getLastName());
+
+
+        return user;
     }
 }
