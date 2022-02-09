@@ -54,12 +54,12 @@ public class UserController {
         return response;
     }
 
-    @RequestMapping(value = {  "/user/fileUploadSubmit" }, method = RequestMethod.GET)
+    @RequestMapping(value = {  "/user/fileUploadSubmit" }, method = RequestMethod.POST)
     public ModelAndView uploadSubmit(@RequestParam MultipartFile file, @RequestParam(required = false) String title) throws Exception {
         ModelAndView response = new ModelAndView();
 
         //figure out what the default OS temp directory is
-        String tmpdir = System.getProperty("java.io.tmpdir");
+        String tmpdir = System.getProperty("java.io.tmpdir") + File.separator + "org.perscholas";
         String saveFileName = tmpdir + File.separator + file.getOriginalFilename();
 
         File targetFile = new File("src/main/resources/targetFile.tmp");

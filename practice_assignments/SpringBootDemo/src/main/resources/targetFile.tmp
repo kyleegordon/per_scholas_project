@@ -1,0 +1,58 @@
+HTML/CSS KBA REVIEW
+
+
+What is a pseudo class?
+	-A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). 
+	For example, :hover can be used to change a button's color when the user's pointer hovers over it.
+
+What precedence is given to css style (least to most)?
+	-external -> internal -> inline
+
+How to import a css file?
+	-<link rel="stylesheet" type="text/css" href="example.css" />
+
+What are the 5 formats for using colors?
+	-HEX, RGB, CMYK, HSV, HSL
+
+How many instances of each id value can you have per document?
+	-1, must be unique
+
+How many instances of a class value can you have per document?
+	-can be applied to many different tags, does not need to be unique
+
+Does HTML display extra whitespace on the web page?
+	-no, unless the text is surrounded by a <pre></pre> tag
+
+In a css file, what does . and # represent?
+	-# signifies and id, . signifies a class
+
+What are the different position properties and what do they do?
+	-relative
+	-absolute
+	-static
+	-fixed
+	-sticky
+
+How do you comment in CSS?
+	-/*This is an example of a comment*/
+
+What is opacity?
+	-a css property, opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
+
+What is an <a></a> tag?
+	-link tag
+	-<a href="">Text that is clickable</a>
+
+How to link to an anchor tag?
+	<a href="#section2">Go to Section 2</a>
+	<div id="section2"> The link would take you to this section of the page</div>
+
+
+Additional Study Topics:
+
+-Know all form input elements (from slides Day-1HTML_CSS 1)
+-Read slides about key/value pairs for HTML attributes
+-Know all Selectors (from slides Day-2.1-HTML_CSS 2)
+-Know all the HTML tags
+-Know the basics about animations and how they are applied 
+
